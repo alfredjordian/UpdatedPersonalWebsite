@@ -8,12 +8,14 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 
+
 import Typography from "@material-ui/core/Typography";
+import Contact from "./Contact";
 
 const useStyles = makeStyles({
   root: {
     width: 345,
-    marginBottom:'2%'
+    marginBottom: "2%",
   },
   media: {
     height: 140,
@@ -26,16 +28,17 @@ function AboutMe() {
   return (
     <div className="aboutMeContainer">
       <div className="aboutMe">
-      <h1 style={{
-        marginLeft:'6%',
-        marginBottom:'2%'
-      }}>Interests</h1>
+        <h1
+          style={{
+            marginLeft: "10%",
+            marginTop: "2%",
+            marginBottom: "2%",
+          }}
+        >
+          Interests
+        </h1>
         <Card className={classes.root}>
-          <CardMedia
-            className={classes.media}
-            image={music}
-            title="Guitar"
-          />
+          <CardMedia className={classes.media} image={music} title="Guitar" />
           <CardContent>
             <Typography variant="body2" component="p">
               Music has always been something engrained at an early age. I play
@@ -59,19 +62,31 @@ function AboutMe() {
         </Card>
 
         <Card className={classes.root}>
-          <CardMedia
-            className={classes.media}
-            image={weights}
-            title="Gym"
-          />
+          <CardMedia className={classes.media} image={weights} title="Gym" />
           <CardContent>
             <Typography variant="body2" component="p">
-            On days that I'm not too busy coding, I'll be at the gym lifting.
+              On days that I'm not too busy coding, I'll be at the gym lifting.
             </Typography>
           </CardContent>
         </Card>
-
       </div>
+      <div class="row">
+          <div class="story">
+            <figure class="story__shape">
+              <img alt="" class="story__img"/>
+              <figcaption class="story__caption">Ian Jordan</figcaption>
+            </figure>
+            <div class="story__text">
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                
+              </h3>
+              <p>API, Javascript, Express, CSS, React, PostgreSQL, MaterialUI, JQuery <br/><br/>
+              Email - Ian12009@gmail.com
+              </p>
+              <Contact/>
+            </div>
+          </div>
+        </div>
     </div>
   );
 }

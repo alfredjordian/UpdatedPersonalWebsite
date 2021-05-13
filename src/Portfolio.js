@@ -1,17 +1,28 @@
 import React from "react";
 import "./Portfolio.css";
+import retrodraw from './pics/retrodraw.png';
+import strangerthings from './pics/strangerthings.png';
+import graceshopper from './pics/graceshopper.png';
 
 function Portfolio() {
   return (
+    <div>
+      <h1 style={{
+        display:'flex',
+        justifyContent:'center',
+        paddingTop:'3%',
+        backgroundColor: "rgb(173, 193, 235)",
+        borderTop: "double rgb(255, 187, 187)"
+      }}>Projects</h1>
     <div
       style={{
-        backgroundColor: "white",
         display: "flex",
-        justifyContent: "row",
+        justifyContent:'center',
+        backgroundColor: "rgb(173, 193, 235)"
       }}
     >
       <div class="card" style={{
-          backgroundImage:'url("https://images.pexels.com/photos/2705888/pexels-photo-2705888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")'
+          backgroundImage:`url(${strangerthings})`
            
       }}>
         <div class="card-content">
@@ -33,7 +44,7 @@ function Portfolio() {
       </div>
 
       <div class="card" style={{
-          backgroundImage:'url("https://images.pexels.com/photos/2705888/pexels-photo-2705888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")'
+          backgroundImage:`url(${graceshopper})`
            
       }}>
         <div class="card-content">
@@ -46,7 +57,7 @@ function Portfolio() {
             Express, BCrypt, Axios
           </p>
           <a
-            href="https://pixeldraww.netlify.app"
+            href="https://salty-wildwood-03444.herokuapp.com/products"
             target="_blank"
             rel="noopener noreferrer"
             class="btn"
@@ -57,7 +68,7 @@ function Portfolio() {
       </div>
 
       <div class="card" style={{
-          backgroundImage:'url("https://images.pexels.com/photos/2705888/pexels-photo-2705888.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")'
+          backgroundImage:`url(${retrodraw})`
            
       }}>
         <div class="card-content">
@@ -68,7 +79,7 @@ function Portfolio() {
             CSS
           </p>
           <a
-            href="https://strangerzthingz.netlify.app"
+            href="https://pixeldraww.netlify.app"
             target="_blank"
             rel="noopener noreferrer"
             class="btn"
@@ -77,6 +88,7 @@ function Portfolio() {
           </a>
         </div>
       </div>
+    </div>
     </div>
   );
 }

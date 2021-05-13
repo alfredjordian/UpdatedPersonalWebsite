@@ -8,10 +8,198 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 5%;
+    border-top: double rgb(255, 187, 187);
+    border-bottom: double rgb(255, 187, 187);
     height: 100%;
-    margin-left: 40%;
-
+    background-color: rgb(214, 224, 245);
+	padding-left: 40%;
 }
 
+.row {
+	max-width: 130rem;
+	margin: 0 auto
+}
+
+.row:not(:last-child) {
+	margin-bottom: 8rem
+}
+
+@media only screen and (max-width: 56.25em) {
+	.row:not(:last-child) {
+		margin-bottom: 6rem
+	}
+}
+
+@media only screen and (max-width: 56.25em) {
+	.row {
+		max-width: 50rem;
+		padding: 0 3rem
+	}
+}
+
+.row::after {
+	content: "";
+	display: table;
+	clear: both
+}
+
+.row [class^="col-"] {
+	float: left
+}
+
+.row [class^="col-"]:not(:last-child) {
+	margin-right: 6rem
+}
+
+@media only screen and (max-width: 56.25em) {
+	.row [class^="col-"]:not(:last-child) {
+		margin-right: 0;
+		margin-bottom: 6rem
+	}
+}
+
+@media only screen and (max-width: 56.25em) {
+	.row [class^="col-"] {
+		width: 100% !important
+	}
+}
+
+.row .col-1-of-2 {
+	width: calc((100% - 6rem) / 2)
+}
+
+.row .col-1-of-3 {
+	width: calc((100% - 2 * 6rem) / 3)
+}
+
+.row .col-2-of-3 {
+	width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem)
+}
+
+.row .col-1-of-4 {
+	width: calc((100% - 3 * 6rem) / 4)
+}
+
+.row .col-2-of-4 {
+	width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem)
+}
+
+.row .col-3-of-4 {
+	width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem)
+}
+
+.story {
+	margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 3%;
+    margin-bottom: 4%;
+	-webkit-box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+	box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.164);
+	border-radius: 3px;
+	padding: 1rem;
+	padding-left: 5rem;
+	font-size: 1.6rem;
+	font-weight: 700;
+	-webkit-transform: skewX(-12deg);
+	transform: skewX(-12deg)
+}
+
+@media only screen and (max-width: 56.25em) {
+	.story {
+		width: 100%;
+		padding: 4rem;
+		padding-left: 7rem
+	}
+}
+
+@media only screen and (max-width: 37.5em) {
+	.story {
+		-webkit-transform: skewX(0);
+		transform: skewX(0)
+	}
+}
+
+.story__shape {
+    background-image: url(./pics/ian-headshot.jpg);
+    background-size: 100%;
+	width: 15rem;
+	height: 15rem;
+	float: left;
+	-webkit-transform: translateX(-3rem) skewX(12deg);
+	transform: translateX(-3rem) skewX(12deg);
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+@supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+	.story__shape {
+		-webkit-clip-path: circle(50% at 50% 50%);
+		clip-path: circle(50% at 50% 50%);
+		-webkit-shape-outside: circle(50% at 50% 50%);
+		shape-outside: circle(50% at 50% 50%);
+		border-radius: none
+	}
+}
+
+@media only screen and (max-width: 37.5em) {
+	.story__shape {
+		-webkit-transform: translateX(-3rem) skewX(0);
+		transform: translateX(-3rem) skewX(0)
+	}
+}
+
+.story__img {
+	height: 100%;   
+	float: right;
+	-webkit-transform: translateX(-4rem) scale(1.4);
+	transform: translateX(-4rem) scale(1.4);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transition: all .5s;
+	transition: all .5s
+}
+
+.story__text {
+	-webkit-transform: skewX(12deg);
+	transform: skewX(12deg);
+	padding: 5rem 20rem 5rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+	.story__text {
+		-webkit-transform: skewX(0);
+		transform: skewX(0)
+	}
+}
+
+.story__caption {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, 20%);
+	transform: translate(-50%, 20%);
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.7rem;
+	text-align: center;
+	opacity: 0;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden
+}
+
+.story:hover .story__caption {
+	opacity: 1;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%)
+}
+
+.story:hover .story__img {
+	-webkit-transform: translateX(-4rem) scale(1);
+	transform: translateX(-4rem) scale(1);
+	-webkit-filter: blur(3px) brightness(80%);
+	filter: blur(3px) brightness(80%)
+}
 
