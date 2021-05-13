@@ -1,76 +1,79 @@
-import React from 'react'
-import './AboutMe.css'
-import music from './pics/music.jpg'
-import webdev from './pics/webdev.jpg'
-import weights from './pics/weights.png'
-import Paper from "@material-ui/core/Paper";
+import React from "react";
+import "./AboutMe.css";
+import music from "./pics/music.jpg";
+import webdev from "./pics/webdev.jpg";
+import weights from "./pics/weights.png";
 import { makeStyles } from "@material-ui/core/styles";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import PhoneIcon from "@material-ui/icons/Phone";
-import WorkIcon from '@material-ui/icons/Work';
-import PersonPinIcon from "@material-ui/icons/PersonPin";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
 
-
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
-    root: {
-      flexGrow: 1,
-      maxWidth: 150
-    }
-  });
+  root: {
+    width: 345,
+    marginBottom:'2%'
+  },
+  media: {
+    height: 140,
+  },
+});
 
 function AboutMe() {
+  const classes = useStyles();
 
-    const classes = useStyles();
-    const [value, setValue] = React.useState(0);
-  
-    const handleChange = (event, newValue) => {
-      setValue(newValue);
-    };
+  return (
+    <div className="aboutMeContainer">
+      <div className="aboutMe">
+      <h1 style={{
+        marginLeft:'6%',
+        marginBottom:'2%'
+      }}>Interests</h1>
+        <Card className={classes.root}>
+          <CardMedia
+            className={classes.media}
+            image={music}
+            title="Guitar"
+          />
+          <CardContent>
+            <Typography variant="body2" component="p">
+              Music has always been something engrained at an early age. I play
+              piano, guitar, and any other instrument that comes my way.
+            </Typography>
+          </CardContent>
+        </Card>
 
-    return (
-        <div className ="aboutMe">
-        
-            <section className="musicInterest">
-            <img src={music} alt="" id="musicPhoto"></img>
-             <p className="musicAbout">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </section>
+        <Card className={classes.root}>
+          <CardMedia
+            className={classes.media}
+            image={webdev}
+            title="Web Design"
+          />
+          <CardContent>
+            <Typography variant="body2" component="p">
+              Though I'm versed in Backend, my niche is with UX/UI and styling
+              with any FrontEnd stack thrown at me.
+            </Typography>
+          </CardContent>
+        </Card>
 
-            <section className="webDevInterest">
-            <img src={webdev} alt="" id="webDevPhoto"></img>
-            <p className="webDevAbout">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </section>
+        <Card className={classes.root}>
+          <CardMedia
+            className={classes.media}
+            image={weights}
+            title="Gym"
+          />
+          <CardContent>
+            <Typography variant="body2" component="p">
+            On days that I'm not too busy coding, I'll be at the gym lifting.
+            </Typography>
+          </CardContent>
+        </Card>
 
-            <section className="weightInterest">
-            <img src={weights} alt="" id="weightPhoto"></img>
-            <p className="weightAbout">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </section>
-
-            <div className="navBox">
-            <Paper square className={classes.root}>
-            <Tabs
-                orientation="vertical"
-                value={value}
-                onChange={handleChange}
-                variant="fullWidth"
-                indicatorColor="secondary"
-                textColor="secondary"
-                aria-label="icon label tabs example"
-            >
-                <Tab icon={<PersonPinIcon />} label="ABOUT ME" />
-                <Tab icon={<WorkIcon />} label="PORTFOLIO" />
-                <Tab icon={<PhoneIcon />} label="CONTACT ME" />
-            </Tabs>
-            </Paper>
-            </div>
-
-
-        </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default AboutMe
+export default AboutMe;

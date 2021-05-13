@@ -6,10 +6,12 @@
     background-size: 100%;
     left:0;
     top:0;
-    background-image: url('./pics/Hero.gif');
-    padding-bottom: 1%;
+    background-image: url('./pics/Hero3.gif');
+    background-color: rgb(236, 236, 236);
   }
-  
+.hero{
+  height: 100vh;
+}
   .centered{
     position:absolute;
     left:50vw;
@@ -155,7 +157,3 @@
       transform: rotate(45deg) translate(-20px, -20px);
     }
   }
-
-  .navBox {
-    position: fixed;
-}
