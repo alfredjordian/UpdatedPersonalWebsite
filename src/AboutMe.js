@@ -16,6 +16,8 @@ const useStyles = makeStyles({
   root: {
     width: 345,
     marginBottom: "2%",
+    marginTop: "2%",
+    marginRight:'2%'
   },
   media: {
     height: 140,
@@ -27,16 +29,15 @@ function AboutMe() {
 
   return (
     <div className="aboutMeContainer">
-      <div className="aboutMe">
-        <h1
-          style={{
-            marginLeft: "10%",
-            marginTop: "2%",
-            marginBottom: "2%",
-          }}
-        >
+      <h1 style ={{display:'flex', 
+      justifyContent:'center', 
+      backgroundColor:'rgb(214, 224, 245)',
+      borderTop: 'double rgb(255, 187, 187)',
+      paddingTop:'2%'}}>
           Interests
         </h1>
+      <div className="aboutMe">
+    
         <Card className={classes.root}>
           <CardMedia className={classes.media} image={music} title="Guitar" />
           <CardContent>

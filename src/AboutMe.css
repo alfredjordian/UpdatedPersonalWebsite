@@ -7,12 +7,12 @@
     width: 100vw;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    border-top: double rgb(255, 187, 187);
+    flex-direction: row;
     border-bottom: double rgb(255, 187, 187);
     height: 100%;
     background-color: rgb(214, 224, 245);
-	padding-left: 40%;
+	padding-left: 20%;
+	padding-right: 20%;
 }
 
 .row {
